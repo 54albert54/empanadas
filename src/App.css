@@ -56,7 +56,7 @@ body{
 /* Botones */ 
 .Boton{
   position: relative;
-right: -360px;
+right: -340px;
   opacity: .7;
   width: 28px;
   height: 28px;
@@ -128,9 +128,9 @@ right: -360px;
   .Home_containet{
     position: absolute;
     
-    width: 433px;
+    width: 388px;
     height: 800px;
-    left: -28px;
+    left: -40px;
     top:-40px;
     box-shadow:30px 20px 100px 180px #000 ;
   }

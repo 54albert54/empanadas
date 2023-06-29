@@ -1,0 +1,170 @@
+body{
+  background-color: aliceblue;
+}
+.invisible{
+  position: relative;
+  top:-40px;
+  display: none;
+  width: 600px;
+  height: 450px;
+  transition: .6s ease-in-out;
+
+}
+.Home_containet{
+  z-index: 6;
+  transition: .6s ease-in-out;
+  position: relative;
+  top:0px;
+  position: absolute;
+  top: 40px;
+  right: 80px;
+  border-radius: 20px;
+  box-sizing: content-box; 
+  margin-left: 30px;
+  background: #484848;
+  padding: 15px 4px 8px 4px ;
+  border: 1px solid #000;
+  width: 1200px;
+  height: 900px;
+  box-shadow: 1px 3px 3px 3px #484848;
+  overflow: hidden;
+}
+.Home_title{
+  position: relative;
+  font-size: 48px;
+  font-weight: bold;
+  left: 37%;
+}
+
+.Home_containet2{
+  box-sizing: border-box;
+  padding: 0 0 0 12px;
+  background: #fff;
+  width: 100%;
+  height: 97%;
+  overflow: scroll;
+  border-radius: 0 0 20px 20px;
+}
+.Home_boton_container{
+
+  display: flex;
+  gap: 20px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+}
+
+/* Botones */ 
+.Boton{
+  position: relative;
+right: -360px;
+  opacity: .7;
+  width: 28px;
+  height: 28px;
+  border-radius: 100%;
+}
+.Boton:hover{
+  opacity: 1;
+  cursor: pointer;
+  
+}
+.Botonrojo{
+  background-color: rgb(255, 0, 0);
+}
+.Botonamarillo{
+  background-color: rgb(255, 174, 0);
+}
+.Botonverde{
+  background-color: forestgreen;
+}
+/* iconos */
+.iconos_container{
+  z-index: 5;
+  padding:3px  0 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+
+}
+.icono{
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 2px;
+  background: rgb(255, 255, 255);
+  border-radius:20px ;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+.iconos_img{
+  
+  width: 80px;
+  height: 80px;
+}
+.iconos_title{
+  color: #000000;
+}
+.icono:hover{
+  scale: 108%;
+  position: relative;
+  top: -2px;
+  box-shadow: 1px 4px 4px 2px #484848;
+}
+
+@media (max-width:450px) {
+  body{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  
+  background-size: cover;
+  
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdQYu1ICR8FoINu8oI859YJwa5P_tBjFWE8g&usqp=CAU');
+  }
+  .Home_containet{
+    position: absolute;
+    
+    width: 433px;
+    height: 800px;
+    left: -28px;
+    top:-40px;
+    box-shadow:30px 20px 100px 180px #000 ;
+  }
+  .iconos_container{
+    
+  }
+  .Home_title{
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    z-index: 1;
+    
+    width: 358px;
+    height: 60px;
+    top: -10px;
+    left: 12px;
+    background: #fff;
+    margin-bottom: 20px;
+    
+    
+  }
+.repertorio_main{
+  position: relative;
+  left:-30px;
+}
+.Home_datos{
+  padding-top: 1px;
+}
+.icon_container_G{
+  position: absolute;
+  top: 50px;
+  left: -1px;
+  display: flex;
+  flex-wrap: wrap;
+}
+}

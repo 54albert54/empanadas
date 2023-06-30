@@ -28,6 +28,7 @@ return(
   
   <div className="Home_datos">
   {datos}
+  <div className="Home_footer" ></div>
   </div>
 
   </div>

@@ -9,10 +9,27 @@
   width: 400px;
   border: 1px solid #000;
   
+  
 }
 .presentacion_img{
   width: 300px;
   height: 300px;
+}
+.presentacion_cambiar{
+  
+  display: flex;
+  color: #484747;
+  font-size: 24px;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 40px;
+  background: rgb(105, 106, 108);
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+.presentacion_cambiar p{
+  color: white;
 }
 .presentacion_agregar{
   display: flex;
@@ -25,4 +42,21 @@
   background: #0f0;
   margin-bottom: 20px;
   border-radius: 20px;
+}
+.presentacion_cantidad{
+  display: flex;
+  align-items: center;
+  width: 120px;
+  border: #000 solid 1px;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  border-radius: 8px;
+
+}
+.presentacion_boton{
+  font-size: 38px;
+  
+}
+.presentacion_price{
+   
 }

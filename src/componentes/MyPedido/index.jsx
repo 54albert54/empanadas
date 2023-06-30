@@ -1,27 +1,46 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../context";
 import { BottonWS } from "../Botton";
 import "./style.css"
 
+
 export const MyPedido =()=>{
   const context =useContext(AppContext)
   
+  const [render,setRender] = useState(context.jugos)
+  useEffect(()=>{
+    console.log("hola estoy dentro el useEfect")
+    setRender(context.jugos)
+  },[context.jugos])
+  console.log(context.jugos)
+  
 
-  let numWs = 9786011460
+  let numWs = +19786011460
   
   let jugosP ="Jugos de: "
   const calcularJugos =()=>{
+    const quitarElemento =(index)=>{
+      const changeOrder = context.jugos.splice(index,1)
+      context.AgregarJugos(changeOrder)
+      setRender(changeOrder)
+
+      console.log(context.jugos)
+    }
     
 
     return(
       context.jugos.map((jugos,index )=>{
-        total +=jugos.precios
         
-        jugosP +=jugos.sabor+", "
+        total +=jugos.total
+        
+        jugosP +=jugos.sabor+" x "+jugos.totalJugos+", "
         
         return( 
           
-        <div className="Pedido_container" key={index}> <p>{jugos.sabor+"    "}</p>   <p>{jugos.precios+" $"}</p></div>)})
+        <div className="Pedido_container" key={index}> <p>{jugos.sabor+" x " + jugos.totalJugos}</p>   <p>{jugos.total+" $"}</p>
+        <div onClick={()=>quitarElemento(index)} >x</div>
+        </div>)})
+
     )
   }
   
@@ -41,13 +60,11 @@ return(
 
 
 </div>
-<p>total : {total}</p>
+<p>total : {total} $</p>
 {context.jugos.length>0?
 <div  onClick={()=>{context.setJugos([])}}>
 <BottonWS numWs={numWs} mensaje={jugosP +" para un total: "+total+"  dolares"} > finalizar pedidos</BottonWS>
 </div>:<div className="Botton_desabilitado"> <p>Has tu pedido primero</p></div>}
-<a  href="whatsapp://send?text=Tu mensaje&phone=+19786011460"> movil</a>
-<a className="whatsappLink mobile" href="whatsapp://send?text=esto lo cambie desde la app de github de mi cel&phone=+19786011460"> mossvil</a>
 
 </>
 )

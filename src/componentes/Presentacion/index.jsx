@@ -3,33 +3,54 @@ import './style.css'
 import { AppContext } from '../../context';
 import { useState } from 'react';
 export const Presentacion =({data})=>{
-  const [count,setCount] = useState(1)
-  const [agregar, setAgregar] =useState(true)
   const context =useContext(AppContext)
-
+  const [count,setCount] = useState(1)
+   const isAgregado = context.jugos.filter(jugo => jugo.id ===data.id).length > 0
+   const [add,setAdd] = useState("")
+   //const isAgregado = false
   const moreItem = () =>{
-    if (count<10 && agregar){
+    if (count<10 && !isAgregado){
     setCount(count => count+1)}
     
   }
 
   const lessItem = () =>{
-    if (count>1 && agregar){
+    if (count>1 && !isAgregado){
     setCount(count => count-1)}
     
   }
-  const completarPedido = ()=>{
+  const agrearAPedido = (id)=>{
+    setAdd(b=>!b)
+    const productForAdd = context.jugos.filter(jugo => jugo.id ===id).length > 0
 
-    const newData = {
-      ...data,
+ if (!productForAdd){
+    const newData =   
+     { ...data,
       ["totalJugos"]:count,
-      ["total"]:count*data.precios
-    }
-    setAgregar(false)
-    context.AgregarJugos(newData)
-
+      ["total"]:count*data.precios};
     
-  }
+
+    context.jugos.push(newData)
+    setCount(1)
+    
+    context.setSorRender(a=>!a)
+    context.AgregarJugos(context.jugos)
+   
+}
+
+}
+const renderIcon = ()=>{
+  if(isAgregado){
+  return(
+  <div  className={`presentacion_cambiar`} ><p>Comprado</p> </div> 
+  )
+}else return(
+<div onClick={()=>{agrearAPedido(data.id)}} className={`presentacion_agregar`} ><p>Agregar</p> </div>
+
+)
+}
+
+
 return(
   <div className="presentacion">
 <div className="presentacion_container">
@@ -40,15 +61,18 @@ return(
 
 <p className="presentacion_price"> Precio:  {data.precios*count}$</p>
 <div className='presentacion_cantidad'>
-{agregar&& <div className='presentacion_boton' onClick={()=> lessItem()} > {"<"}</div>} 
+{!isAgregado&& <div className='presentacion_boton' onClick={()=> lessItem()} > {"<"}</div>} 
 <p>Qty:{count} </p>
-{agregar&&<div className='presentacion_boton' onClick={()=> moreItem()} > {">"}</div>}
+{!isAgregado&&<div className='presentacion_boton' onClick={()=> moreItem()} > {">"}</div>}
 </div>
 
-{!agregar?<div onClick={()=>{setAgregar(true)}} className={`presentacion_cambiar`} ><p>Cambiar</p> </div>:<div onClick={()=>{completarPedido()}} className={agregar?`presentacion_agregar`:``} ><p>{agregar?"Agregar":undefined}</p> </div>
 
+{
+renderIcon()
 }
 </div>
 </div>
 )
 };
+
+// !agregar?<div onClick={()=>{reacerPedido()}} className={`presentacion_cambiar`} ><p>Cambiar</p> </div>:<div onClick={()=>{agrearAPedido(data.id)}} className={agregar?`presentacion_agregar`:``} ><p>Agregar"</p> </div>

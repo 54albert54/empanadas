@@ -1,4 +1,4 @@
-import { createContext,  useState } from "react";
+import { createContext,  useEffect,  useState } from "react";
 
 
 export const AppContext = createContext()
@@ -6,25 +6,24 @@ export const AppContext = createContext()
 
 
 export const AppProvider =({children})=>{
-  const [orden, setOrden] = useState([])
+ 
   const [jugos ,setJugos] = useState([])
-
+  const [forRender ,setSorRender] = useState(true)
+ 
+  useEffect(()=>{
+   
+    console.log("los jugos e an cambiadox")
+  },[forRender])
+    
   
   const AgregarJugos = (newJugo) =>{
-    
-    
-    
-    setJugos(
-      [...jugos,newJugo]
-      
-    )
- 
+    jugos
+    setJugos(newJugo )
   }
-
 
   return(
     <AppContext.Provider value={{
-      jugos,AgregarJugos,orden
+      jugos,AgregarJugos,setSorRender
      
      
     }}>

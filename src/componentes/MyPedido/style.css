@@ -4,3 +4,15 @@
   width: 130px;
   justify-content: space-around;
 }
+.boton_MyPedido{
+  
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+}
+.total_MyPedido{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}

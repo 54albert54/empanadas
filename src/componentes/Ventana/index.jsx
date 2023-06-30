@@ -7,6 +7,7 @@ import { Icono } from "../Icono";
 export const Ventana =({img,datos,children})=>{
   const context =useContext(AppContext)
   const [invisible, setInvisible] = useState(true)
+ 
   
   
 
@@ -33,7 +34,7 @@ return(
 
   </div>
 </div>
-<Icono img={img} setInvisible={()=>setInvisible(state => !state)}>{children}</Icono>
+<Icono onClick={()=>{console.log("hola")}} img={img} setInvisible={()=>setInvisible(state => !state)}>{children}</Icono>
 </>
 )
 };

@@ -1,0 +1,9 @@
+.Pedido_container{
+  display: flex;
+  margin: 6px;
+  border-radius: 8px;
+ 
+  width: 300px;
+  justify-content: space-around;
+  box-shadow: 1px 1px 3px 2px #484844;
+}

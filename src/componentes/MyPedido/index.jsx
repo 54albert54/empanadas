@@ -18,20 +18,21 @@ export const MyPedido =()=>{
   let numWs = +19786011460
   
   let jugosP ="Jugos de: "
-  const quitarElemento =(id)=>{
+//   const quitarElemento =(id)=>{
     
-    const filterProducts =  context.jugos.filter(producto => producto.id != id )
-    context.AgregarJugos(filterProducts)
-    console.log("jugos: ",filterProducts)   
- }
+//     const filterProducts =  context.jugos.filter(producto => producto.id != id )
+//     context.AgregarJugos(filterProducts)
+    
+//  }
 
- const actualizarCarrito=()=>{
+ const actualizarCarrito=(items)=>{
 return(
-  context.jugos.map((jugos,index )=>{
+  
+  items.map((jugos,index )=>{
     total +=jugos.total
     jugosP +=jugos.sabor+" x "+jugos.totalJugos+", "
     return( 
-      <Muestra key={index}  jugos={jugos} quitarElemento={quitarElemento} />
+      <Muestra key={index}  jugos={jugos} quitarElemento={context.quitarElemento} />
    )})
    )
  }
@@ -40,32 +41,34 @@ return(
   let total = 0
   
 return(
-  <div   >
+  <>
+  <div className="MyPedido_main" >
 
-  <div>  <h1> Jugos</h1> 
+<div>  <h1> Jugos</h1> 
 
+{actualizarCarrito(context.jugos)}
+</div>
+<div>  <h1> Emapanadas</h1> 
 
-
-{
-  actualizarCarrito()
-}
-
-
-
+{actualizarCarrito(context.jugos)}
 </div>
 
 <div  className="boton_MyPedido" >  
+
+
+</div>
+</div>
+<div className="MyPedido_footer">
 {context.jugos.length>0?
-<div  className="total_MyPedido" >
-<h1 >total : {total} $</h1>
-<BottonWS numWs={numWs} mensaje={jugosP +" para un total: "+total+"  dolares"} > finalizar pedidos</BottonWS>
-</div>:(<div  className="total_MyPedido">
-
-<div className="Botton_desabilitado"> <p>Has tu pedido primero</p></div>
-</div>)}
-
-</div>
-</div>
+  <div  className="total_MyPedido" >
+  <h1 >total : {total} $</h1>
+  <BottonWS numWs={numWs} mensaje={jugosP +" para un total: "+total+"  dolares"} > finalizar pedidos</BottonWS>
+  </div>:(<div  className="total_MyPedido">
+  
+  <div className="Botton_desabilitado"> <p>Has tu pedido primero</p></div>
+  </div>)}
+  </div>
+  </>
 )
 };
 

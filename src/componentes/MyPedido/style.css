@@ -1,18 +1,25 @@
-.Pedido_container{
-  display: flex;
+.MyPedido_main{
   border: 1px solid #000;
-  width: 130px;
-  justify-content: space-around;
+  width: 100vh;
+  height: 400px;
+  overflow: scroll;
 }
+
 .boton_MyPedido{
   
   justify-content: center;
   position: absolute;
   bottom: 0;
+  margin-bottom: 120px;
 }
 .total_MyPedido{
   display: flex;
   flex-direction: column;
   align-items: center;
   
+}
+.MyPedido_footer{
+  margin-top: 30px;
+  position: relative;
+  left: -230px;
 }

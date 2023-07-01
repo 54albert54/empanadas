@@ -128,9 +128,9 @@ right: -340px;
   .Home_containet{
     position: absolute;
     
-    width: 420px;
-    height: 800px;
-    left: -30px;
+    width: 100vh;
+    height: 100vh;
+    left: -48px;
     top:-40px;
     box-shadow:30px 20px 100px 180px #000 ;
   }
@@ -160,7 +160,9 @@ right: -340px;
   left:-30px;
 }
 .Home_datos{
-  padding-top: 1px;
+ 
+  padding-top: -10px;
+  left: -12px;
 }
 .icon_container_G{
   position: absolute;

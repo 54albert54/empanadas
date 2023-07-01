@@ -28,7 +28,7 @@ return(
   <h2>   Oprime la opcione que mejor se acomode a tu necesecidad con gusto te responderemos lo antes posible </h2>
   <BottonWS numWs={numWs} mensaje={mensaje1} > Bandeja personalizada</BottonWS>
   <BottonWS numWs={numWs} mensaje={mensaje2} > Eventos o Actividades</BottonWS>
-  <p>1.2</p>
+  <p>1.3</p>
   
 
 </>

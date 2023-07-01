@@ -2,11 +2,11 @@ import { useContext } from 'react';
 import './style.css'
 import { AppContext } from '../../context';
 import { useState } from 'react';
-import { Alerta } from '../Alerta';
-export const Presentacion =({data})=>{
+
+export const Presentacion =({data,productos,setProducto})=>{
   const context =useContext(AppContext)
   const [count,setCount] = useState(1)
-   const isAgregado = context.jugos.filter(jugo => jugo.id ===data.id).length > 0
+   const isAgregado = productos.filter(jugo => jugo.id ===data.id).length > 0
    
    //const isAgregado = false
   const moreItem = () =>{
@@ -21,7 +21,7 @@ export const Presentacion =({data})=>{
     
   }
   const agrearAPedido = (id)=>{
-    const productForAdd = context.jugos.filter(jugo => jugo.id ===id).length > 0
+    const productForAdd = productos.filter(jugo => jugo.id ===id).length > 0
 
  if (!productForAdd){
     const newData =   
@@ -30,11 +30,11 @@ export const Presentacion =({data})=>{
       ["total"]:count*data.precios};
     
 
-    context.jugos.push(newData)
+      productos.push(newData)
     setCount(1)
     
     context.setSorRender(a=>!a)
-    context.AgregarJugos(context.jugos)
+    setProducto(productos)
    
 }
 
@@ -54,6 +54,9 @@ const renderIcon = ()=>{
 const makeAlert =()=>{
   context.setAlerta("")
  context.setId(data.id)
+context.setClase(data.clase)
+
+ 
  
 }
 const ajustarCanntidad=()=>{

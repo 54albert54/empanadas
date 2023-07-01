@@ -18,21 +18,26 @@ export const MyPedido =()=>{
   let numWs = +19786011460
   
   let jugosP ="Jugos de: "
-//   const quitarElemento =(id)=>{
-    
-//     const filterProducts =  context.jugos.filter(producto => producto.id != id )
-//     context.AgregarJugos(filterProducts)
-    
-//  }
+  let empanadasP ="Empanadas de: "
 
- const actualizarCarrito=(items)=>{
+ const actualizarCarrito=(items,setData)=>{
 return(
   
-  items.map((jugos,index )=>{
-    total +=jugos.total
-    jugosP +=jugos.sabor+" x "+jugos.totalJugos+", "
+  items.map((item,index )=>{
+    console.log(empanadasP.length)
+    total +=item.total
+    if (item.clase==="jugo"){
+      
+        jugosP +=item.sabor+" x "+item.totalJugos+", "
+      
+    }if (item.clase==="empanada"){
+      
+        empanadasP +=item.sabor+" x "+item.totalJugos+", "
+      
+    }
+    
     return( 
-      <Muestra key={index}  jugos={jugos} quitarElemento={context.quitarElemento} />
+      <Muestra key={index}  jugos={item} quitarElemento={setData} />
    )})
    )
  }
@@ -46,11 +51,11 @@ return(
 
 <div>  <h1> Jugos</h1> 
 
-{actualizarCarrito(context.jugos)}
+{actualizarCarrito(context.jugos,context.quitarJugo)}
 </div>
 <div>  <h1> Emapanadas</h1> 
 
-{actualizarCarrito(context.jugos)}
+{actualizarCarrito(context.empanadas,context.quitarEmpanadas)}
 </div>
 
 <div  className="boton_MyPedido" >  
@@ -59,10 +64,13 @@ return(
 </div>
 </div>
 <div className="MyPedido_footer">
-{context.jugos.length>0?
+{context.jugos.length >0 || context.empanadas.length >0?
   <div  className="total_MyPedido" >
   <h1 >total : {total} $</h1>
-  <BottonWS numWs={numWs} mensaje={jugosP +" para un total: "+total+"  dolares"} > finalizar pedidos</BottonWS>
+  
+  
+
+  <BottonWS numWs={numWs} mensaje={ `${jugosP = jugosP.length>10?jugosP:"No hay jugos  ,"}` + `${empanadasP = empanadasP.length>14?empanadasP:"No hay empanadas  ,"}`+" para un total: "+total+"  dolares"} > finalizar pedidos</BottonWS>
   </div>:(<div  className="total_MyPedido">
   
   <div className="Botton_desabilitado"> <p>Has tu pedido primero</p></div>

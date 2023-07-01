@@ -18,7 +18,7 @@ return(
 <div className={`Home_containet ${invisible?"invisible":"" }`}>
   <div className="Home_boton_container">
     <div onClick={()=>setInvisible(true) } >
-    <Boton  clase={"rojo"}/>
+    <Boton  clase={"rojo"}> <img className="Home_boton_img" src={context.iconClose} alt="sd" /></Boton>
     </div>
     
 </div>
@@ -34,7 +34,7 @@ return(
 
   </div>
 </div>
-<Icono onClick={()=>{console.log("hola")}} img={img} setInvisible={()=>setInvisible(state => !state)}>{children}</Icono>
+<Icono  img={img} setInvisible={()=>setInvisible(state => !state)}>{children}</Icono>
 </>
 )
 };

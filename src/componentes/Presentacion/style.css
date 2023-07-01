@@ -13,8 +13,9 @@
   
 }
 .presentacion_img{
-  width: 260px;
-  height: 260px;
+  width: 240px;
+  height: 240px;
+  border-radius: 8px;
 }
 .presentacion_cambiar{
   margin: 20px 0 20px 10px;

@@ -5,11 +5,12 @@
   align-items: center;
   margin-left: 38px;
   margin-bottom: 20px;
-  border-radius: 20px;
+  border-radius: 8px;
   width: 300px;
-  height: 100px;
-  background: linear-gradient(rgb(230, 227, 227),rgb(145, 144, 144));
+  height: 70px;
+  background: linear-gradient(rgb(221, 220, 220),rgb(188, 187, 187));
   border: 1px solid #000;
+  
 }
 .Botton:hover{
   cursor: pointer;

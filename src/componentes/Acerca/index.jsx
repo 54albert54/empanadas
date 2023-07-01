@@ -5,7 +5,7 @@ return(
   <p>Bueno aqui es donde va la descripcion y mucho blabla bla
     
   </p>
-  
+  <input name="nuevoNumero" type="text" placeholder="Escribe tu numero" />
 </div>
 )
 };

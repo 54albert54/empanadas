@@ -5,9 +5,8 @@ import "./style.css"
 export const Alerta =()=>{
   const context =useContext(AppContext)
   
-console.log("lo que vale ahora",context.app)
-const confirmar=()=>{
 
+const confirmar=()=>{
   //debido a que este es un component esterto por el mmento no encontre otra mejor manera de hacerlo reutilizable
   if (context.clase==="jugo"){
     return(
@@ -16,6 +15,10 @@ const confirmar=()=>{
   }if (context.clase==="empanada"){
     return(
       context.quitarEmpanadas(context.id)
+    )
+  }if (context.clase==="quipes"){
+    return(
+      context.quitarQuipes(context.id)
     )
   }
 }

@@ -84,7 +84,7 @@ return(
 
   <h3>{data.sabor}</h3>
 <img className="presentacion_img" src={data.img} alt="img" />
-<p className="presentacion_descripcion" >descripion</p>
+<p className="presentacion_descripcion" ></p>
 
 <p className="presentacion_price"> Precio:  {data.precios*count}$ </p>
 

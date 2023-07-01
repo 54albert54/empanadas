@@ -1,7 +1,7 @@
 import "./style.css"
 
 export const BottonWS =({children,numWs,mensaje})=>{
-   console.log(mensaje)
+
    
    
 return(

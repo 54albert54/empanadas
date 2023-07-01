@@ -1,4 +1,4 @@
-import { createContext,  useEffect,  useState } from "react";
+import { createContext,  useState } from "react";
 
 
 export const AppContext = createContext()
@@ -8,16 +8,18 @@ export const AppContext = createContext()
 export const AppProvider =({children})=>{
  
   const [jugos ,setJugos] = useState([])
+  const [quipes ,setQuipes] = useState([])
   const [empanadas ,setempanadas] = useState([])
   const [forRender ,setSorRender] = useState(true)
   const [alerta,setAlerta] = useState("Presentacion_invisible")
   const [clase,setClase] = useState("")
   const [id, setId]=useState("")
  const iconClose = "https://www.svgrepo.com/show/195829/cancel-close.svg"
-  // useEffect(()=>{
-   
-  //   console.log("los jugos e an cambiadox")
-  // },[forRender])
+  const AgregarQuipes = (newQuipe) =>{
+    
+    setQuipes(newQuipe )
+  }
+  
   
   const AgregarEmanadas = (newEmpanada) =>{
     
@@ -41,11 +43,18 @@ export const AppProvider =({children})=>{
   
 }
 
+const quitarQuipes =(id)=>{
+    
+  const filterProducts =  quipes.filter(producto => producto.id != id )
+  AgregarQuipes(filterProducts)
+  
+}
+
 
   return(
     <AppContext.Provider value={{
-      jugos,AgregarJugos,setSorRender, quitarJugo,alerta,setAlerta,id, setId,empanadas,AgregarEmanadas,quitarEmpanadas,clase,setClase
-     ,iconClose
+      jugos,AgregarJugos,setSorRender, quitarJugo,alerta,setAlerta,id, setId,empanadas,AgregarEmanadas,quitarEmpanadas,clase,setClase,quipes ,setQuipes
+     ,iconClose,AgregarQuipes,quitarQuipes
      
     }}>
       {children}

@@ -15,7 +15,7 @@ export const MyPedido =()=>{
   
   
 
-  let numWs = +19786011460
+  
   
   let jugosP ="Jugos de: "
   let empanadasP ="Empanadas de: "
@@ -78,7 +78,7 @@ return(
   
   
 
-  <BottonWS numWs={numWs} mensaje={ `${jugosP = jugosP.length>10?jugosP:"No hay jugos  ,"}` + `${empanadasP = empanadasP.length>14?empanadasP:"No hay empanadas  ,"}`+`${quipesP = quipesP.length>11?quipesP:"No hay quipes  ,"}` +" para un total: "+total+"  dolares"} > finalizar pedidos</BottonWS>
+  <BottonWS  mensaje={"Saludos me gustaria  "+ `${jugosP = jugosP.length>10?jugosP:""}` + `${empanadasP = empanadasP.length>14?empanadasP:""}`+`${quipesP = quipesP.length>11?quipesP:""}` +" para un total: "+total+"  dolares"} > finalizar pedidos</BottonWS>
   </div>:(<div  className="total_MyPedido">
   
   <div className="Botton_desabilitado"> <p>Has tu pedido </p></div>

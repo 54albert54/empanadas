@@ -26,7 +26,7 @@ export const Empanadas =()=>{
   return(
   <>
     {array.map((data,index )=>(
-      <Presentacion key={index} data={data} productos={context.empanadas} />))}
+      <Presentacion key={index} data={data} productos={context.empanadas} setProducto={context.AgregarEmanadas} />))}
   </>
 )
 };

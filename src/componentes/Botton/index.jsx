@@ -1,20 +1,24 @@
+import { useContext } from "react";
 import "./style.css"
+import { AppContext } from "../../context";
+import { AgregarNumero } from "../AgregarNumero";
 
-export const BottonWS =({children,numWs,mensaje})=>{
-
+export const BottonWS =({children,mensaje})=>{
+   const context =useContext(AppContext)
    
    
 return(
 <div className="Botton">
-{/* <a  href="whatsapp://send?text=Tu mensaje&phone=+19786011460"> movil</a> */}
 
 
-<a title="Click para chatear" href={`whatsapp://send?text=${mensaje}&phone=${numWs}`} target="blank" rel="noopener"><p className="Botton_p" >{children}</p> </a>
+{context.hasNumber?
+<a title="Click para chatear" href={`${context.link}?text=${mensaje}&phone=${context.numero}`} target="blank" rel="noopener"><p className="Botton_p" >{children}</p> </a>
+:<div>
+   <AgregarNumero/>
+    </div>}
 
     
    </div>
 )
 };
 
-// https://api.whatsapp.com/send?phone=${numWs}&text=${mensaje}
-// whatsapp://send?text=${mensaje}&phone=${numWs}

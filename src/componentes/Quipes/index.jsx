@@ -25,7 +25,7 @@ export const Quipes =()=>{
   return(
   <>
     {array.map((data,index )=>(
-      <Presentacion key={index} data={data} productos={context.quipes} />))}
+      <Presentacion key={index} data={data} productos={context.quipes} setProducto={context.AgregarQuipes} />))}
   </>
 )
 };

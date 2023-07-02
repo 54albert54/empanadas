@@ -82,7 +82,7 @@ return(
  
 <div className="presentacion_container">
 
-  <h3>{data.sabor}</h3>
+  <h1 className="presentacion_title">{data.sabor}</h1>
 <img className="presentacion_img" src={data.img} alt="img" />
 <p className="presentacion_descripcion" ></p>
 

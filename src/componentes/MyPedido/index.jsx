@@ -58,7 +58,7 @@ return(
 
 {actualizarCarrito(context.jugos,context.quitarJugo)}
 </div>}
-{hasEmpanada&&<div><h1> Emapanadas</h1> 
+{hasEmpanada&&<div><h1> Empanadas</h1> 
 {actualizarCarrito(context.empanadas,context.quitarEmpanadas)}
 </div>}
 

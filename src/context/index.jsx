@@ -8,7 +8,6 @@ export const AppContext = createContext()
 export const AppProvider =({children})=>{
   const linkCel = "whatsapp://send"
   const linkPc ="https://api.whatsapp.com/send"
-
   const [jugos ,setJugos] = useState([])
   const [quipes ,setQuipes] = useState([])
   const [empanadas ,setempanadas] = useState([])
@@ -49,11 +48,6 @@ const saveNumber =(nuevoNumeros)=>{
   localStorage.setItem(newNumber,JSON.stringify(nuevoNumeros))
   console.log(nuevoNumeros)
 }
-
-
-
-
-
 
   const changeLink = ()=> {
     link == linkPc?setLink(linkCel):setLink(linkPc)
